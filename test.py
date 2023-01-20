@@ -29,3 +29,35 @@ value = 2.5
 
 formatted = '{} = {}'.format(key, value)
 print(formatted)
+
+print("-------------------")
+
+item = ("Bananas", "Pizza")
+first, second = item 
+print(first, "and", second)
+
+print("-------------------")
+
+snacks = [("Oatmeal", 150), ("Cereal", 280), ("Fit Crunch", 190)]
+
+for index, (name, calories) in enumerate(snacks, start= 1):
+    print(f'#{index}: {name} has {calories} calories')
+
+print("-------------------")
+
+flavor_list = ['Vanilla','Strawberry', 'Blueberry', 'Neopolitan']
+
+# for flavor in flavor_list:
+#     print(f'{flavor} is delicious and dank.')
+
+for i, sosa in enumerate(flavor_list, 1):
+    print(f'{i}: {sosa}')
+
+fresh_fruit = {
+ 'apple': 10,
+ 'banana': 8,
+ 'lemon': 5,
+}
+
+count = fresh_fruit.get('lemon', 0)
+print(count)
