@@ -60,4 +60,27 @@ fresh_fruit = {
 }
 
 count = fresh_fruit.get('lemon', 0)
-print(count)
+print(count)   
+print("-------------------")
+# Chapter 2 item 11 slicing sequences
+list = ['a', 'b','c','d','e', 'f','g','h','i']
+# someList[inclusive: exclusive]
+print("letters1 : " ,list[2:7])
+print("letters2 : " ,list[:5]) # beginning 5 items
+print("letters3 : " ,list[1:3])
+print("letters4 : " ,list[-5:]) # last 5 items
+
+print("-------------------")
+#Chapter 2 item 12 striding and slicing
+#someList = [start:end:stride]
+x = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
+odds = x[::2]
+evens = x[1::2]
+print(odds)
+print(evens)
+print("-------------------")
+s = "elephant"
+
+reverse =  s[::-1]
+print(reverse)
