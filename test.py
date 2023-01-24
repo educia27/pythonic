@@ -84,3 +84,73 @@ s = "elephant"
 
 reverse =  s[::-1]
 print(reverse)
+print("-------------------")
+#chapter 12 item 13 catch all unpacking over slicing
+car_ages = [0, 9, 4, 8, 7, 20, 19, 1, 6, 15]
+car_ages_descending = sorted(car_ages,reverse=True)
+#catch all unpacking thru a starred expression
+#allows one part of the unpacking assignment to receive all values that didnt
+#match any other part of the unpacking pattern 
+oldest, second_oldest, *others = car_ages_descending
+print(oldest,second_oldest, others)
+print("-------------------")
+#chapter 12 item 14: sort by complex criteria using key parameter
+class Tool:
+    def __init__(self, name, weight):
+        self.name = name
+        self.weight = weight
+    
+    def __repr__(self):
+        return f'Tool{self.name!r}, {self.weight})'
+
+tools = [
+        Tool('level', 3.5),
+        Tool('hammer', 1.25),
+        Tool('screwdriver', 0.5),
+        Tool('chisel', 0.25),
+    ]    
+
+print('Unsorted:', repr(tools))
+tools.sort(key=lambda x: x.name)
+print('\nSorted: ', tools)
+print("-------------------")
+#Chapter 2 avoiding dict insertion ordering 
+# the way that dictionaries preserve insertion ordering is now 
+# part of the Python language specificcation
+def my_func(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key} = {value}')
+
+my_func(sosa = "300", gbe = "gloryGang")
+
+print("-------------------")
+#Prefer get over in  and keyError to handle missing dictionary keys
+counters2 = {
+ 'pumpernickel': 2,
+ 'sourdough': 1,
+}
+county = counters2.get(key, 0)
+counters2[key] = county + 1
+print("this is count :", county)
+print("this is counters :", counters2)
+
+print("-----------------------")
+
+from collections import defaultdict
+
+visits = {
+ 'Mexico': {'Tulum', 'Puerto Vallarta'},
+ 'Japan': {'Hakone'},
+}
+
+class Visits:
+    def __init__(self):
+        self.data = defaultdict(set)
+    
+    def add(self, country, city):
+        self.data[country].add(city)
+
+visits = Visits()
+visits.add('England', 'Bath')
+visits.add('England','London')
+print(visits.data)
