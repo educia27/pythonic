@@ -154,3 +154,27 @@ visits = Visits()
 visits.add('England', 'Bath')
 visits.add('England','London')
 print(visits.data)
+print("-----------------------")
+#chapter 2 item 23 provide optional behavior with keyword arguments
+def remainder(number, divisor):
+    return number % divisor
+
+my_kwargs = {
+ 'number': 20,
+ 'divisor': 7,
+}
+assert remainder(**my_kwargs) == 6
+
+assert remainder(20, 7) == 6
+
+print(remainder(20,7))
+print("-----------------------")
+
+def print_parameters(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key} = {value}')
+
+print(print_parameters(alpha = 1.5 , beta = 346, gamma = 74))
+
+print("-----------------------")
+
