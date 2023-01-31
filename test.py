@@ -177,4 +177,64 @@ def print_parameters(**kwargs):
 print(print_parameters(alpha = 1.5 , beta = 346, gamma = 74))
 
 print("-----------------------")
+# chapter 3 using None and Docstrings to specify dynamic default args
+from time import sleep
+from datetime import datetime 
+
+def log(message, when= None):
+    """Log a message with a timestamp
+        
+        Args: 
+            message: Message to print
+            when: datetime of when the message occurred
+                Defaults to the present time
+    """
+    if when is None:
+        when = datetime.now()
+        print(f'{when}: {message}')
+
+log('Hi there!')
+sleep(0.1)
+log('Hello again!')
+
+print("-----------------------")
+
+name = "Alice"
+age = 30
+print("My name is {0} and I am {1} years old.".format(name, age))
+
+print("-----------------------")
+#Python generator using yield
+def square_numbers(nums):
+    for i in nums:
+        yield (i*i)
+# list comprehension
+x = square_numbers([1,2,3,4,5,6,7])
+
+print(next(x))
+print(next(x))
+print(next(x))
+print("-----------------------")
+# instead of multiple print statements , you can get the square values with a for loop
+
+for values in x:
+    print (values)
+# Chapter 4 list comprehensions
+
+# normal list
+g = [1,2,3,4,5,6,7,8,9,10]
+squares = []
+
+for x in g:
+    squares.append(x**2)
+    
+print(squares)
+# list comp
+squares2 = [x**2 for x in a]
+
+print(squares2)
+# chapter 4 generator expressions for large list comprehensions item 32 
+it = (len(x) for x in open('my_file.txt'))
+print(it)
+
 
