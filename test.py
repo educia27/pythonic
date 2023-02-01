@@ -234,7 +234,45 @@ squares2 = [x**2 for x in a]
 
 print(squares2)
 # chapter 4 generator expressions for large list comprehensions item 32 
-it = (len(x) for x in open('my_file.txt'))
+# it = (len(x) for x in open('my_file.txt'))
+# print(it)
+
+print("-----------------------")
+
+# chapter 4 item 33 multiple generators with "yield from"
+
+def move(period, speed):
+ for _ in range(period):
+   yield speed
+
+def pause(delay):
+ for _ in range(delay):
+   yield 0
+
+
+def render(delta):
+ print(f'Delta: {delta:.1f}')
+ # Move the images onscreen
+ ...
+def run(func):
+ for delta in func():
+   render(delta)
+
+def animate_composed():
+ yield from move(4, 5.0)
+ yield from pause(3)
+ yield from move(2, 3.0)
+
+run(animate_composed)
+
+print("-----------------------")
+
+# Chapter 4 item 36 iter tools 
+import itertools
+
+it = itertools.chain([1, 2, 3], [4, 5, 6])
 print(it)
 
+y = itertools.repeat('hello', 3)
+print(list(y))
 
