@@ -1,9 +1,9 @@
-import argparse
+# import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('num1', help="int to add", type= int)
-parser.add_argument('num2', help="2nd number to add", type= int)
-args = parser.parse_args()
+# parser = argparse.ArgumentParser()
+# parser.add_argument('num1', help="int to add", type= int)
+# parser.add_argument('num2', help="2nd number to add", type= int)
+# args = parser.parse_args()
 
 class Student:
     
@@ -40,5 +40,5 @@ def adding(num1,num2):
 person1 = Student("Frank", "Riberyyyyy",12000)
 
 
-if __name__=="__main__":
-    print(adding(args.num1, args.num2))
+# if __name__=="__main__":
+#     print(adding(args.num1, args.num2))
